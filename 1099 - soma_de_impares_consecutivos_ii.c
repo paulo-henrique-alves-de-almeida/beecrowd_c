@@ -7,26 +7,30 @@ int main() {
 	for (i; i <= n; i++) {
 		scanf("%d %d", &x, &y);
 		
-		if (x < y) {
-			troca = x;
-			x = y;
-			y = troca;
-		}
-		
-		if (x % 2 == 0) {
-			x--;
+		if (x == y) {
+			soma_impar = 0;
 		} else {
-			x -= 2;
+			if (x < y) {
+				troca = x;
+				x = y;
+				y = troca;
+			}
+			
+			if (x % 2 == 0) {
+				x--;
+			} else {
+				x -= 2;
+			}
+			
+			if (y % 2 == 0) {
+				y++;
+			} else {
+				y += 2;
+			}
+			
+			qtd_impar = ((x - y) / 2) + 1;
+			soma_impar = qtd_impar * ((x + y) / 2);
 		}
-		
-		if (y % 2 == 0) {
-			y++;
-		} else {
-			y += 2;
-		}
-		
-		qtd_impar = ((x - y) / 2) + 1;
-		soma_impar = qtd_impar * ((x + y) / 2);
 		
 		printf("%d\n", soma_impar);
 	}
