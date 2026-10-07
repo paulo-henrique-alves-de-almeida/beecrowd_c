@@ -3,12 +3,12 @@
 int main() {
 	char t;
 	float valor, soma = 0;
-	int coluna, i, j;
-	scanf("%d %c", &coluna, &t);
+	int i, j, area_verde;
+	scanf(" %c", &t);
 
 	for (i = 0; i < 12; i++) {
 		for (j = 0; j < 12; j++) {
-			if (j == coluna) {
+			if (j < i) {
 				scanf("%f", &valor);
 				soma += valor;
 				continue;
@@ -21,7 +21,8 @@ int main() {
 	if (t == 'S') {
 		printf("%.1f\n", soma);
 	} else if (t == 'M') {
-		printf("%.1f\n", soma / 12);
+		area_verde = 11 * (11 + 1) / 2;
+		printf("%.1f\n", soma / area_verde);
 	}
  
     return 0;
