@@ -1,10 +1,11 @@
 #include <stdio.h>
  
 int main() {
-	int i = 0, novo_calculo;
+	int i, novo_calculo;
 	float notas[2], media;
 	
 	do {
+		i = 0;
 		while (i < 2) {
 			scanf("%f", &notas[i]);
 			
